@@ -1,5 +1,10 @@
 def award_enchantments(start, end, step):
+    counter = 0
     for quest_number in range(start, end, step):
+        counter += 1
+        if counter < 3:
+            continue
+        counter = 0    
         enchantment_strength = quest_number * 5
         print(
             f"Enchantment of strength {enchantment_strength} awarded for completing {quest_number} quests!"
