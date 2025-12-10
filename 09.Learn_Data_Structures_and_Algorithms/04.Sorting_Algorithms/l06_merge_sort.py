@@ -5,11 +5,10 @@ def merge_sort(nums):
     sorted_left_side = nums[:len(nums)//2]
     sorted_right_side = nums[len(nums)//2:]
     
-    merge_left_side = merge_sort(sorted_left_side)
-    merge_right_side = merge_sort(sorted_right_side)
+    left_side = merge_sort(sorted_left_side)
+    right_side = merge_sort(sorted_right_side)
 
-    result = merge(merge_left_side, merge_right_side)
-    return result
+    return merge(left_side, right_side)
 
 def merge(first, second):
     final = []
