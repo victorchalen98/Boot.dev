@@ -1,15 +1,14 @@
 def tsp(cities, paths, dist):
     all_routes = permutations(cities)
 
-    for route in all_routes:          # loop externo: cada permutación
+    for route in all_routes:          
         total = 0
 
-        for i in range(len(route) - 1):   # loop interno: sumar tramos consecutivos
+        for i in range(len(route) - 1):   
             from_city = route[i]
             to_city = route[i + 1]
             total += paths[from_city][to_city]
 
-            # pequeña optimización: si ya se pasó, no sigas
             if total >= dist:
                 break
 
@@ -18,9 +17,7 @@ def tsp(cities, paths, dist):
 
     return False
 
-
 # don't touch below this line
-
 
 def permutations(arr):
     res = []
